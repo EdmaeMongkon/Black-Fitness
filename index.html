@@ -654,6 +654,61 @@
         </div>
     </footer>
 
+    <!-- Announcement Floating Button -->
+    <button class="floating-announcement-btn" id="announcementBtn" aria-label="Open Announcement">
+        <i data-lucide="bell" class="bell-icon"></i>
+        <span class="announcement-badge-dot" id="announcementDot"></span>
+    </button>
+
+    <!-- Announcement Modal -->
+    <div class="announcement-modal-overlay" id="announcementModal">
+        <div class="announcement-modal-card">
+            <button class="announcement-modal-close" id="announcementClose" aria-label="Close Announcement">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="announcement-modal-content">
+                <div class="announcement-modal-header">
+                    <i data-lucide="megaphone" class="header-icon"></i>
+                    <h2 class="modal-title" data-i18n="announcement-title">ประกาศสำคัญ</h2>
+                </div>
+                
+                <div class="announcement-modal-body">
+                    <!-- Target Section (Platinum suspended) -->
+                    <div class="announcement-main-highlight">
+                        <i data-lucide="alert-triangle" class="highlight-icon"></i>
+                        <div class="highlight-text" data-i18n="announcement-badge-platinum">งดรับสมาชิกแบบ Platinum (ชั่วคราว) ❗️</div>
+                    </div>
+                    
+                    <p class="announcement-desc" data-i18n="announcement-subtitle">เนื่องจากขณะนี้ Black Fitness “สาขาบางบอน3” ได้จำนวนสมาชิก 650 ครบ ตามที่ตั้งใจไว้แล้ว 🖤</p>
+                    
+                    <div class="announcement-reasons">
+                        <div class="reasons-title" data-i18n="announcement-reason-title">เพราะไม่อยากให้ 🔻</div>
+                        <ul class="reasons-list">
+                            <li><i data-lucide="check-circle-2" class="reason-check"></i> <span data-i18n="announcement-reason-1">แออัดเกินไป</span></li>
+                            <li><i data-lucide="check-circle-2" class="reason-check"></i> <span data-i18n="announcement-reason-2">ต้องรอเครื่องนานเกินไป</span></li>
+                            <li><i data-lucide="check-circle-2" class="reason-check"></i> <span data-i18n="announcement-reason-3">ไม่มีที่จอดรถ</span></li>
+                        </ul>
+                    </div>
+
+                    <p class="announcement-footer-note" data-i18n="announcement-thankyou">ขอบคุณสมาชิกทุกคนที่สนับสนุนเรา หากเปิดรับสมาชิกเพิ่ม จะรีบแจ้งให้ทุกคนทราบครับ 🙏</p>
+                    
+                    <!-- Gold Slots Status & Waiting list -->
+                    <div class="announcement-status-section">
+                        <div class="status-gold" data-i18n="announcement-badge-gold">*ยังรับสมาชิกแบบ Gold : 16 ท่าน ❗️</div>
+                        <div class="status-waiting" data-i18n="announcement-waiting-list">🔻หลังจากนี้จะเปิดให้ Booking Waiting list. เท่านั้นครับ</div>
+                    </div>
+                </div>
+
+                <div class="announcement-modal-footer">
+                    <button class="btn btn-outline" id="announcementDismissBtn" data-i18n="announcement-btn-close">ปิดประกาศ</button>
+                    <a href="https://www.facebook.com/Blackfitnessbangbon3" target="_blank" class="btn btn-primary" id="announcementActionBtn">
+                        <i data-lucide="message-circle" class="btn-icon-left"></i> <span data-i18n="announcement-btn-action">จองสิทธิ์ / ติดต่อเรา</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
 </body>
 </html>

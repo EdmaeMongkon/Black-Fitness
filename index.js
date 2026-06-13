@@ -163,7 +163,30 @@ const translations = {
         th: "ออกกำลังกายเสร็จแล้ว อย่าลืมดูแลโภชนาการของคุณ! เรามีบูธ Black Food เสิร์ฟอาหารเพื่อสุขภาพแสนอร่อย โปรตีนสูง ไขมันต่ำ เพื่อช่วยฟื้นฟูกล้ามเนื้อและเสริมประสิทธิภาพการออกกำลังกายให้ดีที่สุด",
         en: "Done working out? Don't forget your nutrition! Visit our Black Food booth serving delicious, high-protein, low-fat healthy meals to optimize your recovery and fitness results."
     },
-    "food-btn": { th: "ดูเมนูอาหารและคาเฟ่สุขภาพ", en: "Explore Healthy Menu & Cafe" }
+    "food-btn": { th: "ดูเมนูอาหารและคาเฟ่สุขภาพ", en: "Explore Healthy Menu & Cafe" },
+
+    // Announcement Popup
+    "announcement-title": { th: "ประกาศสำคัญ", en: "Important Announcement" },
+    "announcement-badge-platinum": { th: "งดรับสมาชิกแบบ Platinum (ชั่วคราว) ❗️", en: "Temporarily Suspending Platinum Memberships ❗️" },
+    "announcement-subtitle": { 
+        th: "เนื่องจากขณะนี้ Black Fitness “สาขาบางบอน3” ได้จำนวนสมาชิก 650 ครบ ตามที่ตั้งใจไว้แล้ว 🖤", 
+        en: "As Black Fitness \"Bangbon 3 Branch\" has reached its capacity of 650 members 🖤" 
+    },
+    "announcement-reason-title": { th: "เพราะไม่อยากให้ 🔻", en: "To ensure the best experience and avoid 🔻" },
+    "announcement-reason-1": { th: "แออัดเกินไป", en: "Overcrowding" },
+    "announcement-reason-2": { th: "ต้องรอเครื่องนานเกินไป", en: "Long wait times for equipment" },
+    "announcement-reason-3": { th: "ไม่มีที่จอดรถ", en: "Insufficient parking space" },
+    "announcement-thankyou": { 
+        th: "ขอบคุณสมาชิกทุกคนที่สนับสนุนเรา หากเปิดรับสมาชิกเพิ่ม จะรีบแจ้งให้ทุกคนทราบครับ 🙏", 
+        en: "Thank you to all members for your support. We will notify you as soon as we reopen memberships 🙏" 
+    },
+    "announcement-badge-gold": { th: "*ยังรับสมาชิกแบบ Gold : 16 ท่าน ❗️", en: "*We are still accepting Gold memberships: 16 spots left ❗️" },
+    "announcement-waiting-list": { 
+        th: "🔻หลังจากนี้จะเปิดให้ Booking Waiting list. เท่านั้นครับ", 
+        en: "🔻After these spots are filled, we will only open for Booking Waiting list." 
+    },
+    "announcement-btn-close": { th: "ปิดประกาศ", en: "Dismiss" },
+    "announcement-btn-action": { th: "จองสิทธิ์ / ติดต่อเรา", en: "Book / Contact Us" }
 };
 
 // SVG templates for floating background items (Gold/Orange colored fitness elements)
@@ -221,6 +244,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // H. Setup branch card image sliders
     setupBranchSliders();
+
+    // I. Setup announcement popup modal
+    setupAnnouncementModal();
 });
 
 // 2. Bilingual engine functions
@@ -538,4 +564,66 @@ function setupBranchSliders() {
             }, 5000);
         });
     });
+}
+
+// 8. Announcement Popup Modal & Floating Button Logic
+function setupAnnouncementModal() {
+    const modal = document.getElementById("announcementModal");
+    const closeBtn = document.getElementById("announcementClose");
+    const dismissBtn = document.getElementById("announcementDismissBtn");
+    const triggerBtn = document.getElementById("announcementBtn");
+    const badgeDot = document.getElementById("announcementDot");
+
+    if (!modal) return;
+
+    // Show modal function
+    function openModal() {
+        modal.classList.add("open");
+        document.body.classList.add("announcement-modal-open");
+        // Hide notification dot when user opens the modal
+        if (badgeDot) {
+            badgeDot.style.display = "none";
+        }
+    }
+
+    // Hide modal function
+    function closeModal() {
+        modal.classList.remove("open");
+        document.body.classList.remove("announcement-modal-open");
+        sessionStorage.setItem("black_fitness_news_dismissed", "true");
+    }
+
+    // Bind triggers
+    if (triggerBtn) {
+        triggerBtn.addEventListener("click", openModal);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeModal);
+    }
+
+    if (dismissBtn) {
+        dismissBtn.addEventListener("click", closeModal);
+    }
+
+    // Close when clicking outside of the card
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Auto-open modal on first page load per session
+    const isDismissed = sessionStorage.getItem("black_fitness_news_dismissed");
+    if (!isDismissed) {
+        // Add a slight delay for aesthetic page entry
+        setTimeout(() => {
+            openModal();
+        }, 1200);
+    } else {
+        // Hide dot if they already read it in this session
+        if (badgeDot) {
+            badgeDot.style.display = "none";
+        }
+    }
 }
