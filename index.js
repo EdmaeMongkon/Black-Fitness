@@ -156,7 +156,14 @@ const translations = {
     "review-bangbon-3": { 
         th: "บริการดีมาก อุปกรณ์ครบและทันสมัยที่สุดในย่านนี้ บรรยากาศเงียบสงบเป็นส่วนตัวดีครับ", 
         en: "Excellent service. Best and most modern equipment in this area. Quiet and private atmosphere, which is great." 
-    }
+    },
+    "food-title-1": { th: "เติมเต็มความฟิตด้วย", en: "Fuel Your Workout with" },
+    "food-title-2": { th: "บูธ Black Food อาหารสุขภาพ", en: "Black Food Healthy Dining" },
+    "food-desc": {
+        th: "ออกกำลังกายเสร็จแล้ว อย่าลืมดูแลโภชนาการของคุณ! เรามีบูธ Black Food เสิร์ฟอาหารเพื่อสุขภาพแสนอร่อย โปรตีนสูง ไขมันต่ำ เพื่อช่วยฟื้นฟูกล้ามเนื้อและเสริมประสิทธิภาพการออกกำลังกายให้ดีที่สุด",
+        en: "Done working out? Don't forget your nutrition! Visit our Black Food booth serving delicious, high-protein, low-fat healthy meals to optimize your recovery and fitness results."
+    },
+    "food-btn": { th: "ดูเมนูอาหารและคาเฟ่สุขภาพ", en: "Explore Healthy Menu & Cafe" }
 };
 
 // SVG templates for floating background items (Gold/Orange colored fitness elements)
