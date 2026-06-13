@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+dist/
+*.log
+scratch/
+temp/
+*.png
+*.jpg
+*.webp
+!assets/*.webp
+!assets/*.jpg
+!assets/*.png

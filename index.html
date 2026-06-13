@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Fitness - คลับฟิตเนสระดับพรีเมียม</title>
+    <meta name="description" content="Black Fitness คลับฟิตเนสระดับพรีเมียม สาขากาญจนาภิเษก และสาขาบางบอน 3 ยินดีต้อนรับคุณด้วยอุปกรณ์ออกกำลังกายชั้นนำและผู้เชี่ยวชาญ">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="assets/logo_optimized.webp?v=1.5">
+    
+    <!-- Google Fonts: Noto Sans Thai (Google Sans alternative), Prompt & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Social/Brand icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Lucide Icons for UI icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="index.css?v=1.5">
+</head>
+<body>
+    <!-- Floating Gym Equipment Background -->
+    <div id="floating-bg" class="floating-bg"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo_optimized.webp?v=1.5" alt="Black Fitness Logo" class="logo-img">
+                <span class="logo-text">BLACK <span class="accent-color">FITNESS</span></span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active" data-i18n="nav-home">หน้าแรก</a></li>
+                <li><a href="#branches" class="nav-link" data-i18n="nav-branches">สาขาของเรา</a></li>
+                <li><a href="#pricing" class="nav-link" data-i18n="nav-pricing">แพ็กเกจ</a></li>
+                <li><a href="#reviews" class="nav-link" data-i18n="nav-reviews">รีวิวจากลูกค้า</a></li>
+                <li><a href="#features" class="nav-link" data-i18n="nav-features">ทำไมต้องเป็นเรา</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Language Selector Toggle -->
+                <button class="lang-toggle" id="langToggle" aria-label="Switch Language">
+                    <span class="lang-text active" id="lang-th">TH</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-text" id="lang-en">EN</span>
+                </button>
+                <a href="#branches" class="btn-nav-cta" data-i18n="nav-cta">สมัครสมาชิก</a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Nav Overlay -->
+    <div class="mobile-nav" id="mobileNav">
+        <ul class="mobile-menu">
+            <li><a href="#hero" class="mobile-link" data-i18n="nav-home">หน้าแรก</a></li>
+            <li><a href="#branches" class="mobile-link" data-i18n="nav-branches">สาขาของเรา</a></li>
+            <li><a href="#pricing" class="mobile-link" data-i18n="nav-pricing">แพ็กเกจ</a></li>
+            <li><a href="#reviews" class="mobile-link" data-i18n="nav-reviews">รีวิวจากลูกค้า</a></li>
+            <li><a href="#features" class="mobile-link" data-i18n="nav-features">ทำไมต้องเป็นเรา</a></li>
+            <li><a href="#branches" class="btn-mobile-cta" data-i18n="nav-cta">สมัครสมาชิก</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section (Bilingual Split background) -->
+    <section id="hero" class="hero-section">
+        <!-- Split Background Panels -->
+        <div class="hero-split-bg">
+            <div class="split-panel left-panel" id="panelKanchanaphisek">
+                <div class="panel-img-wrapper">
+                    <img src="assets/kanchanaphisek_optimized.webp" alt="Black Fitness Kanchanaphisek" class="panel-img">
+                </div>
+                <div class="panel-overlay"></div>
+                <div class="panel-label">
+                    <span data-i18n="hero-branch-left">สาขากาญจนาภิเษก</span>
+                    <i data-lucide="chevron-right" class="panel-chevron"></i>
+                </div>
+            </div>
+            
+            <div class="split-panel right-panel" id="panelBangbon">
+                <div class="panel-img-wrapper">
+                    <img src="assets/bangbon3_optimized.webp" alt="Black Fitness Bangbon 3" class="panel-img">
+                </div>
+                <div class="panel-overlay"></div>
+                <div class="panel-label">
+                    <span data-i18n="hero-branch-right">สาขาบางบอน 3</span>
+                    <i data-lucide="chevron-left" class="panel-chevron"></i>
+                </div>
+            </div>
+            
+            <div class="split-divider">
+                <div class="divider-glow"></div>
+            </div>
+        </div>
+
+        <!-- Hero Content (Glassmorphism Central Card) -->
+        <div class="hero-content-wrapper">
+            <div class="hero-card">
+                <div class="hero-badge" data-i18n="hero-badge">PREMIUM FITNESS CLUB</div>
+                <h1 class="hero-title">BLACK <span class="gradient-text">FITNESS</span></h1>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">ก้าวข้ามขีดจำกัดเดิมๆ นิยามความแข็งแกร่งในแบบของคุณกับฟิตเนสระดับพรีเมียมที่เปิดให้บริการ 2 สาขาใกล้คุณ</p>
+                
+                <div class="hero-ctas">
+                    <button class="btn btn-primary" onclick="scrollToSection('branches')" data-i18n="btn-explore">เลือกสาขาเพื่อดูข้อมูล</button>
+                    <button class="btn btn-outline" onclick="scrollToSection('pricing')" data-i18n="btn-rates">อัตราค่าบริการ</button>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator" onclick="scrollToSection('branches')">
+                <span data-i18n="scroll-down">เลื่อนลงเพื่อดูสาขา</span>
+                <i data-lucide="chevrons-down" class="scroll-arrow"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="branches-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title"><span data-i18n="branches-title-1">ฟิตเนสใกล้คุณ</span> <span class="gradient-text" data-i18n="branches-title-2">2 สาขาคุณภาพ</span></h2>
+                <p class="section-subtitle" data-i18n="branches-desc">สัมผัสประสบการณ์การออกกำลังกายที่เหนือระดับ พร้อมการบริการที่ใส่ใจและเครื่องเล่นระดับท็อป</p>
+            </div>
+
+            <div class="branches-grid">
+                <!-- Branch 1: Kanchanaphisek -->
+                <div class="branch-card" id="card-kanchanaphisek">
+                    <div class="branch-image-container branch-slider" data-current-slide="0">
+                        <div class="slider-wrapper">
+                            <img src="assets/kanchanaphisek_optimized.webp" alt="Black Fitness Kanchanaphisek" class="branch-card-img slide active">
+                            <img src="assets/kanch_1_optimized.webp" alt="Atmosphere 1" class="branch-card-img slide">
+                            <img src="assets/kanch_2_optimized.webp" alt="Atmosphere 2" class="branch-card-img slide">
+                            <img src="assets/kanch_3_optimized.webp" alt="Atmosphere 3" class="branch-card-img slide">
+                            <img src="assets/kanch_4_optimized.webp" alt="Atmosphere 4" class="branch-card-img slide">
+                        </div>
+                        <div class="branch-badge" data-i18n="branch-status-active">เปิดให้บริการ</div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="slider-arrow prev-arrow" aria-label="Previous Slide"><i data-lucide="chevron-left"></i></button>
+                        <button class="slider-arrow next-arrow" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
+                        
+                        <!-- Dots Indicators -->
+                        <div class="slider-dots">
+                            <span class="dot active" data-slide-index="0"></span>
+                            <span class="dot" data-slide-index="1"></span>
+                            <span class="dot" data-slide-index="2"></span>
+                            <span class="dot" data-slide-index="3"></span>
+                            <span class="dot" data-slide-index="4"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info">
+                        <h3 class="branch-name" data-i18n="branch-kanch-title">Black Fitness สาขากาญจนาภิเษก</h3>
+                        <p class="branch-slogan" data-i18n="branch-kanch-slogan">พื้นที่กว้างขวาง อุปกรณ์ครบครัน เดินทางสะดวกสบาย</p>
+                        
+                        <div class="branch-details-list">
+                            <div class="detail-item">
+                                <i data-lucide="phone" class="detail-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-phone">เบอร์โทรศัพท์</span>
+                                    <a href="tel:0802490384" class="detail-val">080 249 0384</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i data-lucide="mail" class="detail-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-email">อีเมล</span>
+                                    <a href="mailto:blackswanclub2024@gmail.com" class="detail-val">blackswanclub2024@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fa-brands fa-facebook detail-icon fontawesome-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-facebook">เฟซบุ๊กแฟนเพจ</span>
+                                    <a href="https://www.facebook.com/Blackfitnessc" target="_blank" class="detail-val link-hover">Blackfitnessc <i data-lucide="external-link" class="inline-link-icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Dark Map -->
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.7441381313364!2d100.40121677610014!3d13.670258900000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2bd4662b9aa17%3A0xa6ae7ccc5b2dfff!2sBlack%20Fitness!5e0!3m2!1sth!2sth!4v1718269000000!5m2!1sth!2sth" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Black Fitness Kanchanaphisek Map">
+                            </iframe>
+                        </div>
+
+                        <div class="branch-actions">
+                            <a href="https://www.google.com/maps/place/Black+Fitness/@13.6735196,100.3940301,4289m/data=!3m1!1e3!4m10!1m2!2m1!1sblack+fitness!3m6!1s0x30e2bd4662b9aa17:0xa6ae7ccc5b2dfff!8m2!3d13.6702589!4d100.4037917!15sCg1ibGFjayBmaXRuZXNzkgEDZ3lt4AEA!16s%2Fg%2F11y98fs3nc?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-primary btn-block">
+                                <i data-lucide="map-pin"></i> <span data-i18n="btn-map">ดูแผนที่และนำทาง</span>
+                            </a>
+                            <a href="https://www.facebook.com/Blackfitnessc" target="_blank" class="btn btn-outline btn-block">
+                                <i class="fa-brands fa-facebook"></i> <span data-i18n="btn-contact-fb">ติดต่อทาง Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Branch 2: Bangbon 3 -->
+                <div class="branch-card" id="card-bangbon3">
+                    <div class="branch-image-container branch-slider" data-current-slide="0">
+                        <div class="slider-wrapper">
+                            <img src="assets/bangbon3_optimized.webp" alt="Black Fitness Bangbon 3" class="branch-card-img slide active">
+                            <img src="assets/bangbon_1_optimized.webp" alt="Atmosphere 1" class="branch-card-img slide">
+                            <img src="assets/bangbon_2_optimized.webp" alt="Atmosphere 2" class="branch-card-img slide">
+                            <img src="assets/bangbon_3_optimized.webp" alt="Atmosphere 3" class="branch-card-img slide">
+                            <img src="assets/bangbon_4_optimized.webp" alt="Atmosphere 4" class="branch-card-img slide">
+                            <img src="assets/bangbon_5_optimized.webp" alt="Atmosphere 5" class="branch-card-img slide">
+                            <img src="assets/bangbon_6_optimized.webp" alt="Atmosphere 6" class="branch-card-img slide">
+                            <img src="assets/bangbon_7_optimized.webp" alt="Atmosphere 7" class="branch-card-img slide">
+                            <img src="assets/bangbon_8_optimized.webp" alt="Atmosphere 8" class="branch-card-img slide">
+                        </div>
+                        <div class="branch-badge" data-i18n="branch-status-active">เปิดให้บริการ</div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button class="slider-arrow prev-arrow" aria-label="Previous Slide"><i data-lucide="chevron-left"></i></button>
+                        <button class="slider-arrow next-arrow" aria-label="Next Slide"><i data-lucide="chevron-right"></i></button>
+                        
+                        <!-- Dots Indicators -->
+                        <div class="slider-dots">
+                            <span class="dot active" data-slide-index="0"></span>
+                            <span class="dot" data-slide-index="1"></span>
+                            <span class="dot" data-slide-index="2"></span>
+                            <span class="dot" data-slide-index="3"></span>
+                            <span class="dot" data-slide-index="4"></span>
+                            <span class="dot" data-slide-index="5"></span>
+                            <span class="dot" data-slide-index="6"></span>
+                            <span class="dot" data-slide-index="7"></span>
+                            <span class="dot" data-slide-index="8"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="branch-info">
+                        <h3 class="branch-name" data-i18n="branch-bangbon-title">Black Fitness สาขาบางบอน 3</h3>
+                        <p class="branch-slogan" data-i18n="branch-bangbon-slogan">เครื่องเล่นแบรนด์ดังระดับโลก บรรยากาศโปร่งสบาย</p>
+                        
+                        <div class="branch-details-list">
+                            <div class="detail-item">
+                                <i data-lucide="phone" class="detail-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-phone">เบอร์โทรศัพท์</span>
+                                    <a href="tel:0985104243" class="detail-val">098 510 4243</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <i data-lucide="mail" class="detail-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-email">อีเมล</span>
+                                    <a href="mailto:blackpearl.clubteam@gmail.com" class="detail-val">blackpearl.clubteam@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="detail-item">
+                                <i class="fa-brands fa-facebook detail-icon fontawesome-icon"></i>
+                                <div class="detail-content">
+                                    <span class="detail-label" data-i18n="info-facebook">เฟซบุ๊กแฟนเพจ</span>
+                                    <a href="https://www.facebook.com/Blackfitnessbangbon3" target="_blank" class="detail-val link-hover">Blackfitnessbangbon3 <i data-lucide="external-link" class="inline-link-icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Dark Map -->
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.3113940176865!2d100.38057107610072!3d13.684915099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2bd24f96ef0a9%3A0x42454026b6023375!2sBlack%20Fitness%20%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9A%E0%B8%AD%E0%B8%993!5e0!3m2!1sth!2sth!4v1718269000000!5m2!1sth!2sth" 
+                                width="100%" 
+                                height="200" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Black Fitness Bangbon 3 Map">
+                            </iframe>
+                        </div>
+
+                        <div class="branch-actions">
+                            <a href="https://www.google.com/maps/place/Black+Fitness+%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B8%9A%E0%B8%AD%E0%B8%993/@13.6848786,100.3827465,3a,75y,90t/data=!3m8!1e2!3m6!1sCIABIhBvOAOvUw89QR0kT5A6HJM8!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAPNQkAHTcLIKLFMx5uHIRyQQZeCzVT5rYFk8Y66gztsiudFzXYYs8lHzkyskqCKs8q9_HbaMQFu1D-UpqasXTTLsFKeQAl5Gxr9A9K3mzO78o1fjDiIVsNKHyLjHs6xUoiZtxp6qfwfVprSLAzqu%3Dw203-h152-k-no!7i4032!8i3024!4m9!3m8!1s0x30e2bd24f96ef0a9:0x42454026b6023375!8m2!3d13.6849151!4d100.383146!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11yp8wdpj8?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D#" target="_blank" class="btn btn-primary btn-block">
+                                <i data-lucide="map-pin"></i> <span data-i18n="btn-map">ดูแผนที่และนำทาง</span>
+                            </a>
+                            <a href="https://www.facebook.com/Blackfitnessbangbon3" target="_blank" class="btn btn-outline btn-block">
+                                <i class="fa-brands fa-facebook"></i> <span data-i18n="btn-contact-fb">ติดต่อทาง Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title"><span data-i18n="pricing-title-1">อัตราค่าบริการ</span> <span class="gradient-text" data-i18n="pricing-title-2">และแพ็กเกจ</span></h2>
+                <p class="section-subtitle" data-i18n="pricing-desc">เลือกแพ็กเกจที่เหมาะสมกับเป้าหมายการดูแลสุขภาพของคุณ ไม่มีข้อผูกมัดแอบแฝง</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- Card 1: 1 Month -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name" data-i18n="pricing-plan1-name">1 เดือน</span>
+                        <div class="plan-price">
+                            <span class="price-currency">฿</span><span class="price-val">1,690</span>
+                            <span class="price-period" data-i18n="pricing-plan1-period">/ เดือน</span>
+                        </div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-all-equip">เข้าใช้งานอุปกรณ์ทั้งหมด</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-no-limit">ไม่จำกัดเวลาต่อวัน</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-shower">ห้องอาบน้ำและห้องแต่งตัว</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-intro-pt">ปรึกษาเทรนเนอร์เบื้องต้นฟรี</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-multi-branch">เข้าเล่นได้ทั้งสองสาขา</span></li>
+                    </ul>
+                    <a href="#branches" class="btn btn-outline btn-block" data-i18n="btn-choose">สมัครสมาชิก</a>
+                </div>
+
+                <!-- Card 2: 3 Months -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name" data-i18n="pricing-plan2-name">3 เดือน</span>
+                        <div class="plan-price">
+                            <span class="price-currency">฿</span><span class="price-val">4,690</span>
+                            <span class="price-period" data-i18n="pricing-plan2-period">/ 3 เดือน</span>
+                        </div>
+                        <div class="plan-discount" data-i18n="pricing-plan2-save">ประหยัด ฿380</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-all-equip">เข้าใช้งานอุปกรณ์ทั้งหมด</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-no-limit">ไม่จำกัดเวลาต่อวัน</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-shower">ห้องอาบน้ำและห้องแต่งตัว</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-1pt">ฟรี! 1 PT Session</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-multi-branch">เข้าเล่นได้ทั้งสองสาขา</span></li>
+                    </ul>
+                    <a href="#branches" class="btn btn-outline btn-block" data-i18n="btn-choose">สมัครสมาชิก</a>
+                </div>
+
+                <!-- Card 3: 6 Months (Popular) -->
+                <div class="pricing-card popular">
+                    <div class="pricing-badge" data-i18n="pricing-popular">ยอดนิยม 🔥</div>
+                    <div class="pricing-header">
+                        <span class="plan-name" data-i18n="pricing-plan3-name">6 เดือน</span>
+                        <div class="plan-price">
+                            <span class="price-currency">฿</span><span class="price-val">8,890</span>
+                            <span class="price-period" data-i18n="pricing-plan3-period">/ 6 เดือน</span>
+                        </div>
+                        <div class="plan-discount" data-i18n="pricing-plan3-save">ประหยัด ฿1,250</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-all-equip">เข้าใช้งานอุปกรณ์ทั้งหมด</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-no-limit">ไม่จำกัดเวลาต่อวัน</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-shower">ห้องอาบน้ำและห้องแต่งตัว</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-2pt">ฟรี! 2 PT Sessions</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-multi-branch">เข้าเล่นได้ทั้งสองสาขา</span></li>
+                    </ul>
+                    <a href="#branches" class="btn btn-primary btn-block" data-i18n="btn-choose">สมัครสมาชิก</a>
+                </div>
+
+                <!-- Card 4: Yearly -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name" data-i18n="pricing-plan4-name">รายปี (12 เดือน)</span>
+                        <div class="plan-price">
+                            <span class="price-currency">฿</span><span class="price-val">15,990</span>
+                            <span class="price-period" data-i18n="pricing-plan4-period">/ ปี</span>
+                        </div>
+                        <div class="plan-discount" data-i18n="pricing-plan4-save">ประหยัด ฿4,290</div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-all-equip">เข้าใช้งานอุปกรณ์ทั้งหมด</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-no-limit">ไม่จำกัดเวลาต่อวัน</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-shower">ห้องอาบน้ำและห้องแต่งตัว</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-4pt">ฟรี! 4 PT Sessions + เสื้อยืดแบรนด์</span></li>
+                        <li><i data-lucide="check" class="check-icon"></i> <span data-i18n="plan-f-multi-branch">เข้าเล่นได้ทั้งสองสาขา</span></li>
+                    </ul>
+                    <a href="#branches" class="btn btn-outline btn-block" data-i18n="btn-choose">สมัครสมาชิก</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews (Testimonials) Section -->
+    <section id="reviews" class="reviews-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title"><span data-i18n="reviews-title-1">รีวิวจาก</span> <span class="gradient-text" data-i18n="reviews-title-2">ผู้ใช้บริการจริง</span></h2>
+                <p class="section-subtitle" data-i18n="reviews-desc">ความประทับใจและความเห็นจากสมาชิกของ Black Fitness ทั้งสองสาขา</p>
+            </div>
+            
+            <div class="reviews-grid">
+                <!-- Branch 1: Kanchanaphisek Reviews -->
+                <div class="branch-reviews-col">
+                    <h3 class="reviews-branch-title">
+                        <i class="fa-solid fa-map-pin branch-pin-icon"></i> 
+                        <span data-i18n="reviews-branch-kanch">สาขากาญจนาภิเษก</span>
+                    </h3>
+                    <div class="reviews-list">
+                        <!-- Review 1 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-orange">M</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username">Ms</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-kanch-1">ฟิตเนสบรรยากาศดีเป็นกันเอง สะอาดมากก มีล็อคเกอร์เก็บของได้เวลามาเล่น เทรนเนอร์แนะนำดีมาก ที่จอดรถเยอะ เดินทางง่าย</p>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-gold">S</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username" data-i18n="review-user-kanch-2">คุณสุรศักดิ์</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-kanch-2">อุปกรณ์ใหม่ครบครัน บรรยากาศพรีเมียมมากครับ เครื่องเล่นคุณภาพระดับโลก คุ้มค่าราคามาก แนะนำเลย</p>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-orange">T</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username" data-i18n="review-user-kanch-3">คุณธนพร</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-kanch-3">สะอาด ปลอดภัย มีเทรนเนอร์คอยดูแลและแนะนำการใช้อุปกรณ์อย่างดี ไม่กดดันเลยค่ะ ชอบมากๆ</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branch 2: Bangbon 3 Reviews -->
+                <div class="branch-reviews-col">
+                    <h3 class="reviews-branch-title">
+                        <i class="fa-solid fa-map-pin branch-pin-icon"></i> 
+                        <span data-i18n="reviews-branch-bangbon">สาขาบางบอน 3</span>
+                    </h3>
+                    <div class="reviews-list">
+                        <!-- Review 1 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-gold">W</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username" data-i18n="review-user-bangbon-1">คุณวิชัย</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-bangbon-1">ยิมกว้างขวาง บรรยากาศโปร่งสบาย เครื่องเล่นครบครันและใหม่เอี่ยม ที่สำคัญที่จอดรถสะดวกสบายมากครับ</p>
+                        </div>
+                        
+                        <!-- Review 2 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-orange">N</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username" data-i18n="review-user-bangbon-2">คุณนภา</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-bangbon-2">เทรนเนอร์ดูแลดีเป็นกันเอง สถานที่สะอาดสะอ้าน บรรยากาศดี เหมาะกับการออกกำลังกายมากค่ะ</p>
+                        </div>
+                        
+                        <!-- Review 3 -->
+                        <div class="review-card glass-panel">
+                            <div class="review-user-info">
+                                <div class="review-avatar avatar-gold">P</div>
+                                <div class="review-user-meta">
+                                    <h4 class="review-username" data-i18n="review-user-bangbon-3">คุณศิริพงษ์</h4>
+                                    <div class="review-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="review-text" data-i18n="review-bangbon-3">บริการดีมาก อุปกรณ์ครบและทันสมัยที่สุดในย่านนี้ บรรยากาศเงียบสงบเป็นส่วนตัวดีครับ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Features) Section -->
+    <section id="features" class="features-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title"><span data-i18n="features-title-1">ฟิตเพื่อสิ่งที่ดีกว่า</span> <span class="gradient-text" data-i18n="features-title-2">ที่ Black Fitness</span></h2>
+                <p class="section-subtitle" data-i18n="features-desc">เหตุผลดีๆ ที่ลูกค้าไว้วางใจให้เราดูแลความฟิตและความแข็งแรงของร่างกาย</p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="dumbbell" class="feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat1-title">เครื่องออกกำลังกายระดับพรีเมียม</h3>
+                    <p class="feature-desc" data-i18n="feat1-desc">จัดเต็มกับอุปกรณ์สร้างกล้ามเนื้อและคาร์ดิโอแบรนด์นำเข้า ปลอดภัย ทันสมัย และตอบโจทย์ทุกกลุ่มกล้ามเนื้อ</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="users" class="feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat2-title">เทรนเนอร์มืออาชีพดูแลใกล้ชิด</h3>
+                    <p class="feature-desc" data-i18n="feat2-desc">ทีมเทรนเนอร์ผู้เชี่ยวชาญพร้อมให้คำปรึกษา แนะนำการใช้อุปกรณ์ และออกแบบตารางการออกกำลังกายแบบรายบุคคล</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="shield-check" class="feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat3-title">สะอาด สะดวก และปลอดภัย</h3>
+                    <p class="feature-desc" data-i18n="feat3-desc">เราทำความสะอาดอุปกรณ์ทุกชิ้นอย่างสม่ำเสมอ บรรยากาศโปร่งสบาย อากาศถ่ายเทสะดวก พร้อมห้องอาบน้ำและห้องแต่งตัวที่สะอาด</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <i data-lucide="sparkles" class="feature-icon"></i>
+                    </div>
+                    <h3 class="feature-title" data-i18n="feat4-title">สิทธิ์เข้าใช้คุ้มค่าแบบ 2-in-1</h3>
+                    <p class="feature-desc" data-i18n="feat4-desc">สมาชิกรายเดือนและรายปีสามารถเลือกใช้บริการสลับระหว่างสาขากาญจนาภิเษก และสาขาบางบอน 3 ได้อย่างไม่มีค่าใช้จ่ายเพิ่ม</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-branding">
+                <a href="#" class="footer-logo">
+                    <img src="assets/logo_optimized.webp?v=1.5" alt="Black Fitness Logo" class="footer-logo-img">
+                    <span>BLACK <span class="accent-color">FITNESS</span></span>
+                </a>
+                <p class="footer-desc" data-i18n="footer-desc-text">ยกระดับไลฟ์สไตล์การออกกำลังกายของคุณด้วยคลับฟิตเนสระดับพรีเมียม ใกล้บ้าน เดินทางสะดวก เปิดต้อนรับสมาชิกทุกวันเพื่อสุขภาพและหุ่นในฝันของคุณ</p>
+                <div class="footer-socials">
+                    <a href="mailto:blackswanclub2024@gmail.com" aria-label="Email"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links-group">
+                <h4 class="footer-title" data-i18n="footer-quick-links">เมนูหลัก</h4>
+                <ul class="footer-links">
+                    <li><a href="#hero" data-i18n="nav-home">หน้าแรก</a></li>
+                    <li><a href="#branches" data-i18n="nav-branches">สาขาของเรา</a></li>
+                    <li><a href="#pricing" data-i18n="nav-pricing">แพ็กเกจ</a></li>
+                    <li><a href="#reviews" data-i18n="nav-reviews">รีวิวจากลูกค้า</a></li>
+                    <li><a href="#features" data-i18n="nav-features">ทำไมต้องเป็นเรา</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-branches-info">
+                <h4 class="footer-title" data-i18n="footer-branches">สาขาที่ให้บริการ</h4>
+                <div class="footer-branch-item">
+                    <h5 data-i18n="branch-kanch-name">สาขากาญจนาภิเษก</h5>
+                    <p><i data-lucide="phone"></i> <a href="tel:0802490384">080 249 0384</a></p>
+                    <p><i data-lucide="mail"></i> <a href="mailto:blackswanclub2024@gmail.com">blackswanclub2024@gmail.com</a></p>
+                    <p><i class="fa-brands fa-facebook fontawesome-icon-inline"></i> <a href="https://www.facebook.com/Blackfitnessc" target="_blank">Black Fitness กาญจนาภิเษก</a></p>
+                </div>
+                <div class="footer-branch-item" style="margin-top: 15px;">
+                    <h5 data-i18n="branch-bangbon-name">สาขาบางบอน 3</h5>
+                    <p><i data-lucide="phone"></i> <a href="tel:0985104243">098 510 4243</a></p>
+                    <p><i data-lucide="mail"></i> <a href="mailto:blackpearl.clubteam@gmail.com">blackpearl.clubteam@gmail.com</a></p>
+                    <p><i class="fa-brands fa-facebook fontawesome-icon-inline"></i> <a href="https://www.facebook.com/Blackfitnessbangbon3" target="_blank">Black Fitness บางบอน 3</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Black Fitness. All Rights Reserved. Designed for ultimate premium gym experience.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
