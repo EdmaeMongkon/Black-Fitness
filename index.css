@@ -2118,13 +2118,13 @@ body.announcement-modal-open {
 }
 
 .announcement-modal-card {
-    max-width: 600px;
+    max-width: 480px;
     width: 90%;
     background: rgba(15, 15, 15, 0.85);
     border: 1px solid rgba(255, 107, 0, 0.3);
-    border-radius: 24px;
+    border-radius: 20px;
     box-shadow: 0 0 50px rgba(212, 175, 55, 0.15), inset 0 0 20px rgba(255, 107, 0, 0.05);
-    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    padding: 1.5rem;
     position: relative;
     transform: scale(0.9);
     transition: var(--transition-smooth);
@@ -2138,10 +2138,10 @@ body.announcement-modal-open {
 
 .announcement-modal-close {
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2163,21 +2163,21 @@ body.announcement-modal-open {
 .announcement-modal-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     border-bottom: 1.5px solid rgba(255, 107, 0, 0.2);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .announcement-modal-header .header-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     color: var(--color-gold);
     filter: drop-shadow(0 0 8px var(--color-gold-glow));
 }
 
 .announcement-modal-header .modal-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 800;
     background: var(--gradient-accent);
     -webkit-background-clip: text;
@@ -2187,99 +2187,99 @@ body.announcement-modal-open {
 .announcement-modal-body {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 12px;
 }
 
 .announcement-main-highlight {
     background: rgba(255, 107, 0, 0.1);
     border-left: 4px solid var(--color-orange);
-    padding: 15px 20px;
-    border-radius: 4px 12px 12px 4px;
+    padding: 10px 15px;
+    border-radius: 4px 10px 10px 4px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .announcement-main-highlight .highlight-icon {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
     color: var(--color-orange-bright);
     flex-shrink: 0;
 }
 
 .announcement-main-highlight .highlight-text {
-    font-size: 1.25rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--color-white-pure);
     line-height: 1.4;
 }
 
 .announcement-desc {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: var(--color-white-muted);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .announcement-reasons {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 15px 20px;
+    border-radius: 10px;
+    padding: 10px 15px;
 }
 
 .announcement-reasons .reasons-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: var(--color-text-gray);
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .announcement-reasons .reasons-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
 }
 
 .announcement-reasons .reasons-list li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 1rem;
+    gap: 8px;
+    font-size: 0.9rem;
     color: var(--color-white-pure);
 }
 
 .announcement-reasons .reasons-list li .reason-check {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     color: var(--color-orange);
 }
 
 .announcement-footer-note {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--color-text-gray);
     font-style: italic;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .announcement-status-section {
     background: rgba(212, 175, 55, 0.08);
     border: 1px dashed rgba(212, 175, 55, 0.3);
-    border-radius: 12px;
-    padding: 15px;
+    border-radius: 10px;
+    padding: 10px 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .announcement-status-section .status-gold {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 700;
     color: var(--color-gold-bright);
 }
 
 .announcement-status-section .status-waiting {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-gray);
 }
@@ -2287,17 +2287,17 @@ body.announcement-modal-open {
 .announcement-modal-footer {
     display: flex;
     justify-content: flex-end;
-    gap: 12px;
-    margin-top: 25px;
+    gap: 10px;
+    margin-top: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 15px;
+    padding-top: 10px;
 }
 
 .announcement-modal-footer .btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
+    padding: 8px 16px;
+    font-size: 0.85rem;
     font-weight: 600;
-    border-radius: 10px;
+    border-radius: 8px;
 }
 
 /* Floating news bell button */

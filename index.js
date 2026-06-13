@@ -590,7 +590,6 @@ function setupAnnouncementModal() {
     function closeModal() {
         modal.classList.remove("open");
         document.body.classList.remove("announcement-modal-open");
-        sessionStorage.setItem("black_fitness_news_dismissed", "true");
     }
 
     // Bind triggers
@@ -613,17 +612,8 @@ function setupAnnouncementModal() {
         }
     });
 
-    // Auto-open modal on first page load per session
-    const isDismissed = sessionStorage.getItem("black_fitness_news_dismissed");
-    if (!isDismissed) {
-        // Add a slight delay for aesthetic page entry
-        setTimeout(() => {
-            openModal();
-        }, 1200);
-    } else {
-        // Hide dot if they already read it in this session
-        if (badgeDot) {
-            badgeDot.style.display = "none";
-        }
-    }
+    // Auto-open modal on every page load (refresh)
+    setTimeout(() => {
+        openModal();
+    }, 800);
 }
