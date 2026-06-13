@@ -1282,11 +1282,11 @@ section {
     border: 1px solid rgba(255, 107, 0, 0.15);
     border-radius: 24px;
     padding: 60px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 60px;
     align-items: center;
-    text-align: center;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 107, 0, 0.05);
     transition: var(--transition-smooth);
@@ -1297,6 +1297,13 @@ section {
     border-color: rgba(255, 107, 0, 0.3);
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 107, 0, 0.1);
     transform: translateY(-4px);
+}
+
+.black-food-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .black-food-badge {
@@ -1334,7 +1341,6 @@ section {
     color: var(--color-text-gray);
     font-size: 1.05rem;
     line-height: 1.8;
-    max-width: 800px;
     margin-bottom: 35px;
 }
 
@@ -1352,6 +1358,37 @@ section {
     height: 18px;
 }
 
+.black-food-image-container {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+    height: 350px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.black-food-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.black-food-card:hover .black-food-img {
+    transform: scale(1.05);
+}
+
+.image-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 107, 0, 0.1), transparent);
+    pointer-events: none;
+}
+
 /* Responsive adjustments for Black Food section */
 @media (max-width: 768px) {
     .black-food-section {
@@ -1359,8 +1396,15 @@ section {
     }
     
     .black-food-card {
+        grid-template-columns: 1fr;
+        gap: 35px;
         padding: 40px 25px;
-        border-radius: 20px;
+        text-align: center;
+    }
+    
+    .black-food-info {
+        align-items: center;
+        text-align: center;
     }
     
     .black-food-title {
@@ -1370,6 +1414,7 @@ section {
     .black-food-desc {
         font-size: 0.95rem;
         line-height: 1.7;
+        margin-bottom: 25px;
     }
     
     .btn-food-cta {
@@ -1377,6 +1422,10 @@ section {
         font-size: 0.95rem;
         width: 100%;
         justify-content: center;
+    }
+    
+    .black-food-image-container {
+        height: 250px;
     }
 }
 

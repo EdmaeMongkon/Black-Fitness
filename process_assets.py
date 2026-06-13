@@ -90,3 +90,9 @@ if __name__ == "__main__":
         os.path.join(assets_dir, "logo.jpg"),
         os.path.join(assets_dir, "logo_optimized.webp")
     )
+    
+    # Process Booth Image
+    process_gym_image(
+        os.path.join(assets_dir, "booth.jpg"),
+        os.path.join(assets_dir, "booth_optimized.webp")
+    )
