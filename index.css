@@ -2098,13 +2098,15 @@ section {
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     z-index: 2000;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: var(--transition-smooth);
+    overflow-y: auto;
+    padding: 2rem 1rem;
 }
 
 .announcement-modal-overlay.open {
@@ -2119,7 +2121,7 @@ body.announcement-modal-open {
 
 .announcement-modal-card {
     max-width: 480px;
-    width: 90%;
+    width: 100%;
     background: rgba(15, 15, 15, 0.85);
     border: 1px solid rgba(255, 107, 0, 0.3);
     border-radius: 20px;
@@ -2128,8 +2130,7 @@ body.announcement-modal-open {
     position: relative;
     transform: scale(0.9);
     transition: var(--transition-smooth);
-    max-height: 90vh;
-    overflow-y: auto;
+    margin: auto;
 }
 
 .announcement-modal-overlay.open .announcement-modal-card {
@@ -2362,38 +2363,126 @@ body.announcement-modal-open {
 
 /* Modal Responsive overrides */
 @media (max-width: 576px) {
+    .announcement-modal-overlay {
+        padding: 1rem 0.5rem;
+    }
+
     .announcement-modal-card {
-        padding: 1.75rem 1.25rem 1.5rem 1.25rem;
-        border-radius: 20px;
+        padding: 1rem;
+        border-radius: 16px;
     }
-    
+
+    .announcement-modal-header {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        gap: 8px;
+    }
+
     .announcement-modal-header .modal-title {
-        font-size: 1.4rem;
+        font-size: 1.15rem;
     }
-    
+
+    .announcement-modal-header .header-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .announcement-modal-close {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .announcement-modal-body {
+        gap: 8px;
+    }
+
+    .announcement-main-highlight {
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    .announcement-main-highlight .highlight-icon {
+        width: 18px;
+        height: 18px;
+    }
+
     .announcement-main-highlight .highlight-text {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
-    
+
+    .announcement-desc {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .announcement-reasons {
+        padding: 8px 12px;
+    }
+
+    .announcement-reasons .reasons-title {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+
+    .announcement-reasons .reasons-list {
+        gap: 6px;
+    }
+
+    .announcement-reasons .reasons-list li {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+
+    .announcement-reasons .reasons-list li .reason-check {
+        width: 14px;
+        height: 14px;
+    }
+
+    .announcement-footer-note {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .announcement-status-section {
+        padding: 8px 10px;
+        gap: 4px;
+    }
+
+    .announcement-status-section .status-gold {
+        font-size: 0.85rem;
+    }
+
+    .announcement-status-section .status-waiting {
+        font-size: 0.75rem;
+    }
+
+    .announcement-modal-footer {
+        margin-top: 10px;
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
+    .announcement-modal-footer .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
     .floating-announcement-btn {
         bottom: 1.5rem;
         right: 1.5rem;
         width: 3rem;
         height: 3rem;
     }
-    
+
     .floating-announcement-btn .bell-icon {
         width: 20px;
         height: 20px;
-    }
-    
-    .announcement-modal-footer {
-        flex-direction: column-reverse;
-        gap: 8px;
-    }
-    
-    .announcement-modal-footer .btn {
-        width: 100%;
-        justify-content: center;
     }
 }
