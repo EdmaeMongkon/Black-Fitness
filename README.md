@@ -4,15 +4,7 @@ Welcome to the official repository for **Black Fitness**, a state-of-the-art, pr
 
 This project is built to deliver a highly interactive, visually stunning, and responsive user experience that showcases the gym's premium atmosphere, facilities, membership rates, and real member testimonials.
 
----
 
-## 🖥️ Screen Mockups (PC & Mobile)
-
-Here is a side-by-side mockup of the application running on both a laptop screen (PC) and a smartphone (Mobile):
-
-![Black Fitness PC & Mobile Mockups](assets/black_fitness_mockups.png)
-
----
 
 ## 📽️ Interactive Usage Demo
 
