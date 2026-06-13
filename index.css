@@ -1721,10 +1721,50 @@ section {
     
     .footer-container {
         grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-branding {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-socials {
+        justify-content: center;
+    }
+    
+    .footer-title {
+        text-align: center;
+    }
+    
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-links {
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        padding-left: 0;
     }
     
     .footer-branches-info {
         grid-column: span 1;
+        text-align: center;
+    }
+    
+    .footer-branch-item p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
     /* Cards responsive visibility and padding adjustments on mobile */
