@@ -10,4 +10,7 @@ temp/
 !assets/*.webp
 !assets/*.jpg
 !assets/*.png
+!public/*.png
+!public/*.ico
+!public/*.webp
 .vercel
