@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://black-fitness.vercel.app/sitemap.xml
+Sitemap: https://black-fitness-thailand.vercel.app/sitemap.xml
