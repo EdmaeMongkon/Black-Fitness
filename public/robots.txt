@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://black-fitness.vercel.app/sitemap.xml
